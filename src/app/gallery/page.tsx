@@ -6,7 +6,7 @@ import { Reveal, SectionHeading } from "@/components/Reveal";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const cats = ["All", "Clinic", "Herbal Medicine", "Treatment", "Patients", "Ayurvedic Herbs"] as const;
+const cats = ["All", "Clinic", "Herbal Medicine", "Treatment", "Patients", "Ayurvedic Herbs", "Hair Treatment", "Hair Regrowth", "Scalp Therapy"] as const;
 
 const photos: { src: string; cat: Exclude<(typeof cats)[number], "All">; label: string; tall?: boolean }[] = [
   { src: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop", cat: "Clinic", label: "Modern Ayurvedic Clinic" },
@@ -21,6 +21,13 @@ const photos: { src: string; cat: Exclude<(typeof cats)[number], "All">; label: 
   { src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop", cat: "Patients", label: "Happy Recovery", tall: true },
   { src: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800&auto=format&fit=crop", cat: "Ayurvedic Herbs", label: "Mortar & Herbs" },
   { src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop", cat: "Treatment", label: "Fitness & Weight Care" },
+  { src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop", cat: "Treatment", label: "Fitness & Weight Care" },
+  { src: "/images/hair/hair-salon.jpg", cat: "Hair Treatment", label: "Ayurvedic Hair Care Session", tall: true },
+  { src: "/images/hair/ganjapan-care.jpg", cat: "Hair Treatment", label: "Men's Hair & Grooming Care" },
+  { src: "/images/hair/scalp-therapy.jpg", cat: "Scalp Therapy", label: "Scalp Care & Cleansing", tall: true },
+  { src: "/images/hair/hair-massage.jpg", cat: "Scalp Therapy", label: "Shiro-Abhyanga (Head Massage)" },
+  { src: "/images/hair/hair-regrowth.jpg", cat: "Hair Regrowth", label: "Healthy Hair Goal", tall: true },
+  { src: "/images/hair/hair-herbs.jpg", cat: "Hair Regrowth", label: "Bhringraj • Amla • Brahmi Herbs" },
 ];
 
 export default function GalleryPage() {

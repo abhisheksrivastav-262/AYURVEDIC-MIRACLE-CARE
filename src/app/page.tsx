@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, CalendarCheck, ShieldCheck, Leaf, Sparkles, HeartPulse, Stethoscope, Pill, Salad, Star, ArrowRight, CheckCircle2, Activity, Droplets, Flame, Zap, Bone } from "lucide-react";
+import { Phone, CalendarCheck, ShieldCheck, Leaf, Sparkles, HeartPulse, Stethoscope, Pill, Salad, Star, ArrowRight, CheckCircle2, Activity, Droplets, Flame, Zap, Bone, Sprout } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { TrustCounters } from "@/components/Counters";
 import TestimonialCarousel from "@/components/Testimonials";
@@ -14,7 +14,7 @@ import { PHONE_1_LINK, WHATSAPP_LINK } from "@/lib/utils";
 const iconMap: Record<string, React.ReactNode> = {
   sparkles: <Sparkles size={26} />, activity: <Activity size={26} />, droplets: <Droplets size={26} />,
   shield: <ShieldCheck size={26} />, heart: <HeartPulse size={26} />, zap: <Zap size={26} />,
-  leaf: <Leaf size={26} />, bone: <Bone size={26} />, flame: <Flame size={26} />, scale: <Salad size={26} />,
+  leaf: <Leaf size={26} />, bone: <Bone size={26} />, flame: <Flame size={26} />, scale: <Salad size={26} />, sprout: <Sprout size={26} />,
 };
 
 export default function HomePage() {
@@ -105,7 +105,10 @@ export default function HomePage() {
                     <span className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-xl bg-gold-500 text-forest-950 shadow-lg">{iconMap[t.icon]}</span>
                   </div>
                   <div className="p-6">
-                    <p className="text-[11px] font-bold uppercase tracking-widest text-gold-300">{t.english}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-gold-300">{t.english}</p>
+                      {t.slug === "hair-problem" && <span className="rounded-full bg-gold-500 px-2.5 py-0.5 text-[10px] font-bold text-forest-950">★ नई सेवा</span>}
+                    </div>
                     <h3 className="font-display mt-1 text-2xl font-bold text-white">{t.hindi}</h3>
                     <p className="mt-2 text-sm text-white/65">{t.tagline}</p>
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-gold-300">विस्तार से जानें <ArrowRight size={15} className="transition group-hover:translate-x-1" /></span>

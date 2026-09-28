@@ -30,7 +30,7 @@ export function TrustCounters() {
     { value: 15000, suffix: "+", label: "Happy Patients", hindi: "संतुष्ट रोगी" },
     { value: 20, suffix: "+", label: "Years Experience", hindi: "वर्षों का अनुभव" },
     { value: 100, suffix: "%", label: "Ayurvedic Approach", hindi: "शुद्ध आयुर्वेदिक" },
-    { value: 10, suffix: "+", label: "Diseases Treated", hindi: "रोगों का उपचार" },
+    { value: 11, suffix: "+", label: "Diseases Treated", hindi: "रोगों का उपचार" },
   ];
   return (
     <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">

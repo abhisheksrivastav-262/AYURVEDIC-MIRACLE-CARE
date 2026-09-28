@@ -33,7 +33,7 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold tracking-widest text-gold-300 uppercase">Treatments</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
-            {["पित्त की थैली की पथरी", "शुगर (मधुमेह)", "गुर्दे की पथरी", "थायरॉयड", "बवासीर", "जोड़ों का दर्द"].map((t) => (
+            {["पित्त की थैली की पथरी", "शुगर (मधुमेह)", "गुर्दे की पथरी", "थायरॉयड", "बवासीर", "जोड़ों का दर्द", "हेयर प्रॉब्लम एवं गंजापन"].map((t) => (
               <li key={t}><Link href="/treatments" className="hover:text-gold-300 transition">{t}</Link></li>
             ))}
           </ul>

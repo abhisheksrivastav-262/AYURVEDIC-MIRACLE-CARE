@@ -21,7 +21,10 @@ export default function TreatmentsPage() {
                   <span className="absolute bottom-3 left-4 inline-flex items-center gap-1.5 rounded-full bg-forest-950/80 px-3 py-1.5 text-[11px] font-bold text-gold-300 backdrop-blur"><Clock size={12} /> {t.duration}</span>
                 </div>
                 <div className="p-6">
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-gold-600">{t.english}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-gold-600">{t.english}</p>
+                    {t.slug === "hair-problem" && <span className="rounded-full bg-gold-500 px-2.5 py-0.5 text-[10px] font-bold text-forest-950">★ नई सेवा</span>}
+                  </div>
                   <h2 className="font-display mt-1 text-2xl font-bold text-forest-950">{t.hindi}</h2>
                   <p className="mt-2 text-sm text-forest-900/65">{t.tagline}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-forest-800 group-hover:text-gold-600">विस्तार से जानें <ArrowRight size={15} /></span>
