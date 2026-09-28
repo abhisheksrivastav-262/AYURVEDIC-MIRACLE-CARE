@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest-50: #f2f7f2;
+  --color-forest-100: #e0ede0;
+  --color-forest-200: #c2dbc2;
+  --color-forest-600: #1a7a3c;
+  --color-forest-700: #0f5c2b;
+  --color-forest-800: #0a4420;
+  --color-forest-900: #062e16;
+  --color-forest-950: #041f0f;
+  --color-gold-300: #e8cf7a;
+  --color-gold-400: #d9b545;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a8861d;
+  --color-cream-50: #fdfbf5;
+  --color-cream-100: #faf5e8;
+  --color-cream-200: #f5efdc;
+  --color-cream-300: #ece0c3;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+
+:root {
+  --background: #fdfbf5;
+  --foreground: #062e16;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-dark {
+  background: rgba(6, 46, 22, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #e8cf7a 0%, #c9a227 45%, #a8861d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-glow:hover {
+  box-shadow: 0 0 32px rgba(201, 162, 39, 0.45), 0 20px 50px -12px rgba(6, 46, 22, 0.35);
+}
+
+.hero-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: #c9a227;
+  color: #062e16;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #faf5e8;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#0a4420, #c9a227);
+  border-radius: 8px;
+}
