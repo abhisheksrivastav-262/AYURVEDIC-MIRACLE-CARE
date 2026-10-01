@@ -21,11 +21,11 @@ const photos: { src: string; cat: Exclude<(typeof cats)[number], "All">; label: 
   { src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop", cat: "Patients", label: "Happy Recovery", tall: true },
   { src: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800&auto=format&fit=crop", cat: "Ayurvedic Herbs", label: "Mortar & Herbs" },
   { src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop", cat: "Treatment", label: "Fitness & Weight Care" },
-  { src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop", cat: "Treatment", label: "Fitness & Weight Care" },
   { src: "/images/hair/hair-salon.jpg", cat: "Hair Treatment", label: "Ayurvedic Hair Care Session", tall: true },
   { src: "/images/hair/ganjapan-care.jpg", cat: "Hair Treatment", label: "Men's Hair & Grooming Care" },
   { src: "/images/hair/scalp-therapy.jpg", cat: "Scalp Therapy", label: "Scalp Care & Cleansing", tall: true },
   { src: "/images/hair/hair-massage.jpg", cat: "Scalp Therapy", label: "Shiro-Abhyanga (Head Massage)" },
+  { src: "/images/medical/hair-follicle-opt.jpg", cat: "Hair Regrowth", label: "Hair Follicle Diagram (NIH NIAID, CC BY 4.0)", tall: true },
   { src: "/images/hair/hair-regrowth.jpg", cat: "Hair Regrowth", label: "Healthy Hair Goal", tall: true },
   { src: "/images/hair/hair-herbs.jpg", cat: "Hair Regrowth", label: "Bhringraj • Amla • Brahmi Herbs" },
 ];
@@ -47,8 +47,8 @@ export default function GalleryPage() {
         <motion.div layout className="mt-10 columns-2 md:columns-3 gap-4 space-y-4">
           <AnimatePresence>
             {filtered.map((p, i) => (
-              <motion.button layout key={p.src} initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(i)} className={`group relative block w-full overflow-hidden rounded-2xl ${p.tall ? "" : ""}`}>
-                <Image src={p.src} alt={p.label} width={600} height={p.tall ? 800 : 500} className="w-full object-cover transition duration-700 group-hover:scale-108 group-hover:scale-105" loading="lazy" />
+              <motion.button layout key={`${p.src}-${i}`} initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(i)} className="group relative block w-full overflow-hidden rounded-2xl">
+                <Image src={p.src} alt={p.label} width={600} height={p.tall ? 800 : 500} className="w-full object-cover transition duration-700 group-hover:scale-105" loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"} />
                 <span className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
                 <span className="absolute bottom-3 left-3 right-3 text-left text-xs font-bold text-white opacity-0 group-hover:opacity-100 transition">{p.label} • {p.cat}</span>
               </motion.button>

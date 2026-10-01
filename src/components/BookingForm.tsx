@@ -6,7 +6,7 @@ import { PHONE_1_LINK, WHATSAPP_LINK } from "@/lib/utils";
 
 export default function BookingForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", phone: "", disease: "पित्त की थैली की पथरी", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", disease: "पित्त की पथरी", message: "" });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ export default function BookingForm({ compact = false }: { compact?: boolean }) 
           <input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="आपका नाम *" className="w-full rounded-xl border border-forest-900/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30" />
           <input required pattern="[0-9+ ]{10,15}" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="मोबाइल नंबर *" className="w-full rounded-xl border border-forest-900/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-500/30" />
           <select value={form.disease} onChange={(e) => setForm({ ...form, disease: e.target.value })} className="w-full rounded-xl border border-forest-900/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-500">
-            {["पित्त की थैली की पथरी", "शुगर (मधुमेह)", "गुर्दे की पथरी", "मूत्राशय की पथरी", "तिल्ली विकार", "थायरॉयड", "बवासीर", "जोड़ों का दर्द", "गाउट", "मोटापा", "हेयर प्रॉब्लम एवं गंजापन", "अन्य"].map((d) => <option key={d}>{d}</option>)}
+            {["पित्त की पथरी", "किडनी की पथरी", "ब्लैडर की पथरी", "तिल्ली समस्या", "शुगर (मधुमेह)", "मोटापा", "जोड़ों का दर्द", "गठिया / गाउट", "बवासीर", "लकवा / पैरालिसिस", "थायरॉइड", "हेयर प्रॉब्लम", "गंजापन", "पुरुष स्वास्थ्य", "कद परामर्श", "कैंसर सहायक देखभाल", "अन्य"].map((d) => <option key={d}>{d}</option>)}
           </select>
           <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="समस्या संक्षेप में लिखें (वैकल्पिक)" rows={3} className="w-full rounded-xl border border-forest-900/15 bg-white px-4 py-3 text-sm outline-none focus:border-gold-500" />
           <button type="submit" className="w-full rounded-xl bg-gradient-to-r from-forest-700 to-forest-900 px-5 py-3.5 text-sm font-bold text-white shadow-lg hover:brightness-110 transition">WhatsApp पर अपॉइंटमेंट भेजें</button>

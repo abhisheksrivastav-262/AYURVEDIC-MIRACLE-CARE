@@ -30,14 +30,15 @@ export default async function TreatmentDetail({ params }: { params: Promise<{ sl
   return (
     <div className="pt-32 pb-20">
       <div className="relative overflow-hidden bg-forest-950">
-        <Image src={t.image} alt={t.hindi} fill className="object-cover opacity-35" />
+        <Image src={t.image} alt={t.alt} fill sizes="100vw" className="object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/70 to-forest-950" />
         <div className="relative mx-auto max-w-5xl px-4 py-14 md:py-20 text-center">
           <Link href="/treatments" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold text-white hover:bg-white/20"><ArrowLeft size={14} /> सभी उपचार</Link>
-          <p className="mt-6 text-xs font-bold uppercase tracking-widest text-gold-300">{t.english}</p>
+          <p className="mt-6 text-xs font-bold uppercase tracking-widest text-gold-300">{t.categoryEn} • {t.english}</p>
           <h1 className="font-display mt-3 text-4xl md:text-6xl font-bold text-white">{t.hindi}</h1>
           <p className="mt-4 text-lg text-gold-300 font-semibold">{t.tagline}</p>
           <p className="mt-3 inline-flex items-center gap-2 text-sm text-white/70"><Clock size={15} /> अनुमानित अवधि: {t.duration}</p>
+          {t.credit && <p className="mt-3 text-[11px] text-white/40">{t.credit}</p>}
         </div>
       </div>
 
@@ -81,6 +82,14 @@ export default async function TreatmentDetail({ params }: { params: Promise<{ sl
               <p className="mt-5 rounded-xl bg-white/70 p-4 text-xs leading-relaxed text-forest-900/60">* परिणाम व्यक्ति-दर-व्यक्ति भिन्न हो सकते हैं। उचित निदान हेतु वैद्यकीय परामर्श आवश्यक है। यह जानकारी चिकित्सकीय सलाह का विकल्प नहीं है।</p>
             </div>
           </Reveal>
+          {t.disclaimer && (
+            <Reveal>
+              <div className="rounded-3xl border-2 border-red-500/60 bg-red-50 p-6 md:p-8" role="alert">
+                <h2 className="flex items-center gap-2 font-display text-xl md:text-2xl font-bold text-red-800"><AlertTriangle size={22} /> महत्वपूर्ण चिकित्सकीय सूचना</h2>
+                <p className="mt-3 text-sm md:text-[15px] font-medium leading-relaxed text-red-900">{t.disclaimer}</p>
+              </div>
+            </Reveal>
+          )}
           {slug === "hair-problem" && (
             <>
               <Reveal>
@@ -196,6 +205,14 @@ export default async function TreatmentDetail({ params }: { params: Promise<{ sl
                 </div>
               </Reveal>
             </>
+          )}
+          {t.faq && (
+            <Reveal>
+              <div>
+                <h2 className="font-display mb-4 text-2xl font-bold text-forest-950">अक्सर पूछे जाने वाले प्रश्न</h2>
+                <FaqAccordion items={t.faq} />
+              </div>
+            </Reveal>
           )}
           <div className="flex flex-wrap gap-3">
             <Link href={`/treatments/${prev.slug}`} className="inline-flex items-center gap-2 rounded-full border border-forest-900/15 px-5 py-2.5 text-sm font-bold text-forest-900 hover:bg-forest-800 hover:text-white"><ArrowLeft size={15} /> {prev.hindi}</Link>

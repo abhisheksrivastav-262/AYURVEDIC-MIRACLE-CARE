@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { PHONE_1_LINK, SITE_NAME } from "@/lib/utils";
+import { PHONE_1_LINK, SITE_NAME, SITE_NAME_EN } from "@/lib/utils";
 
 const links = [
   { href: "/", label: "Home" },
@@ -29,7 +29,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="bg-forest-950 text-white/90 text-xs md:text-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-2">
-          <p className="truncate">प्रकृति से उपचार • स्वस्थ जीवन का आधार</p>
+          <p className="truncate">आयुर्वेदिक उपचार — संपूर्ण स्वास्थ्य समाधान</p>
           <div className="flex items-center gap-3 shrink-0">
             <a href={PHONE_1_LINK} className="flex items-center gap-1.5 font-semibold text-gold-300 hover:text-gold-400"><Phone size={13} /> 89200 06543</a>
             <span className="hidden sm:inline text-white/30">|</span>
@@ -45,7 +45,7 @@ export default function Navbar() {
             </span>
             <span>
               <span className={cn("font-display block text-lg md:text-xl font-bold leading-none", scrolled ? "text-forest-950" : "text-white")}>{SITE_NAME}</span>
-              <span className={cn("block text-[11px] tracking-wide", scrolled ? "text-forest-700" : "text-gold-300")}>AYURVEDIC MIRACLE CARE</span>
+              <span className={cn("block text-[11px] tracking-wide", scrolled ? "text-forest-700" : "text-gold-300")}>{SITE_NAME_EN}</span>
             </span>
           </Link>
           <div className="hidden lg:flex items-center gap-1">

@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, CalendarCheck, ShieldCheck, Leaf, Sparkles, HeartPulse, Stethoscope, Pill, Salad, Star, ArrowRight, CheckCircle2, Activity, Droplets, Flame, Zap, Bone, Sprout } from "lucide-react";
+import { Phone, CalendarCheck, ShieldCheck, Leaf, Sparkles, HeartPulse, Stethoscope, Pill, Salad, ArrowRight, CheckCircle2, Activity, Droplets, Flame, Zap, Bone, Sprout, Brain, Scissors, Dumbbell, Ruler, Ribbon } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/Reveal";
-import { TrustCounters } from "@/components/Counters";
-import TestimonialCarousel from "@/components/Testimonials";
+import { TrustBadges } from "@/components/Counters";
+import { Stars } from "@/components/Testimonials";
 import FaqAccordion from "@/components/FaqAccordion";
 import BookingForm from "@/components/BookingForm";
 import { treatments, faqs } from "@/data/content";
@@ -15,6 +15,7 @@ const iconMap: Record<string, React.ReactNode> = {
   sparkles: <Sparkles size={26} />, activity: <Activity size={26} />, droplets: <Droplets size={26} />,
   shield: <ShieldCheck size={26} />, heart: <HeartPulse size={26} />, zap: <Zap size={26} />,
   leaf: <Leaf size={26} />, bone: <Bone size={26} />, flame: <Flame size={26} />, scale: <Salad size={26} />, sprout: <Sprout size={26} />,
+  brain: <Brain size={26} />, scissors: <Scissors size={26} />, dumbbell: <Dumbbell size={26} />, ruler: <Ruler size={26} />, ribbon: <Ribbon size={26} />,
 };
 
 export default function HomePage() {
@@ -22,13 +23,13 @@ export default function HomePage() {
     <div>
       {/* HERO */}
       <section className="hero-grain relative flex min-h-[100svh] items-center overflow-hidden bg-forest-950">
-        <Image src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=2000&auto=format&fit=crop" alt="Ayurvedic herbs" fill priority className="object-cover opacity-50" />
+        <Image src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=1600&auto=format&fit=crop" alt="Ayurvedic herbs" fill priority sizes="100vw" className="object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/70 via-forest-950/55 to-forest-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,162,39,0.22),transparent_65%)]" />
         <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pt-36 pb-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="inline-flex items-center gap-2 rounded-full border border-gold-400/40 bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold text-gold-300 backdrop-blur">
-              <Sparkles size={15} /> 20+ वर्षों का आयुर्वेदिक विश्वास • 15,000+ रोगी
+              <Sparkles size={15} /> शुद्ध आयुर्वेदिक • व्यक्तिगत परामर्श • प्राकृतिक देखभाल
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1, duration: 0.8 }} className="font-display mt-6 text-4xl md:text-6xl font-bold leading-[1.15] text-white">
               पित्त की थैली की पथरी का <span className="text-gold-gradient">आयुर्वेदिक उपचार</span>
@@ -38,7 +39,7 @@ export default function HomePage() {
               <span className="text-gold-400">•</span>
               <span className="rounded-full bg-white/10 px-4 py-1.5 border border-white/15">बिना दर्द</span>
               <span className="text-gold-400">•</span>
-              <span className="rounded-full bg-white/10 px-4 py-1.5 border border-white/15">बिना साइड इफेक्ट</span>
+              <span className="rounded-full bg-white/10 px-4 py-1.5 border border-white/15">प्राकृतिक देखभाल</span>
             </motion.p>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-5 max-w-xl text-white/70 leading-relaxed">शुद्ध जड़ी-बूटियों, व्यक्तिगत पथ्य-योजना व अनुभवी मार्गदर्शन द्वारा पथरी, शुगर, थायरॉयड, बवासीर व जोड़-दर्द का प्राकृतिक प्रबंधन।</motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="mt-8 flex flex-wrap gap-3">
@@ -46,13 +47,10 @@ export default function HomePage() {
               <a href={PHONE_1_LINK} className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-3.5 font-bold text-white backdrop-blur hover:bg-white/20 transition"><Phone size={18} /> Call Now</a>
               <a href={WHATSAPP_LINK} target="_blank" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3.5 font-bold text-white hover:brightness-110 transition">WhatsApp</a>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }} className="mt-8 flex items-center gap-4 text-white/70 text-sm">
-              <div className="flex -space-x-3">
-                {["photo-1507003211169-0a1dd7228f2d", "photo-1494790108377-be9c29b29330", "photo-1500648767791-00dcc994a43e", "photo-1438761681033-6461ffad8d80"].map((id) => (
-                  <Image key={id} src={`https://images.unsplash.com/${id}?q=80&w=100&auto=format&fit=crop`} alt="patient" width={40} height={40} className="h-10 w-10 rounded-full border-2 border-forest-950 object-cover" loading="lazy" />
-                ))}
-              </div>
-              <div><div className="flex gap-0.5">{Array.from({ length: 5 }).map((_, i) => <Star key={i} size={14} className="fill-gold-400 text-gold-400" />)}</div><p className="mt-1"><b className="text-white">4.9/5</b> — 2,300+ Google Reviews</p></div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }} className="mt-8 flex flex-wrap items-center gap-2 text-sm">
+              {["वैद्य परामर्श", "WhatsApp फॉलो-अप", "घर-बैठे दवा सुविधा"].map((c) => (
+                <span key={c} className="inline-flex items-center gap-1.5 rounded-full border border-gold-400/30 bg-white/10 px-4 py-1.5 font-semibold text-white/85 backdrop-blur"><CheckCircle2 size={14} className="text-gold-400" />{c}</span>
+              ))}
             </motion.div>
           </div>
           <motion.div id="booking" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.8 }}>
@@ -64,7 +62,7 @@ export default function HomePage() {
 
       {/* TRUST COUNTERS */}
       <section className="relative bg-cream-50 px-4 -mt-6 pb-4">
-        <div className="mx-auto max-w-7xl"><TrustCounters /></div>
+        <div className="mx-auto max-w-7xl"><TrustBadges /></div>
       </section>
 
       {/* WHY CHOOSE US */}
@@ -73,10 +71,10 @@ export default function HomePage() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { icon: <Leaf size={26} />, t: "100% Ayurvedic", d: "शुद्ध, प्रमाणिक जड़ी-बूटियों से निर्मित औषधियाँ।" },
-            { icon: <ShieldCheck size={26} />, t: "No Surgery Approach", d: "ऑपरेशन टालने हेतु प्राकृतिक मार्ग का प्रयास।" },
-            { icon: <HeartPulse size={26} />, t: "No Side Effects", d: "वैद्यकीय मात्रा व परहेज सहित सौम्य चिकित्सा।" },
+            { icon: <ShieldCheck size={26} />, t: "Surgery-Free Options", d: "ऑपरेशन से पहले आयुर्वेदिक विकल्प हेतु ईमानदार परामर्श।" },
+            { icon: <HeartPulse size={26} />, t: "Gentle Care", d: "वैद्यकीय मात्रा व परहेज सहित सौम्य आयुर्वेदिक देखभाल।" },
             { icon: <Stethoscope size={26} />, t: "Personalized Treatment", d: "रिपोर्ट व प्रकृति देखकर व्यक्तिगत योजना।" },
-            { icon: <Pill size={26} />, t: "Experienced Guidance", d: "20+ वर्षों का नैदानिक अनुभव व फॉलो-अप।" },
+            { icon: <Pill size={26} />, t: "Experienced Guidance", d: "अनुभवी वैद्यकीय आकलन व नियमित फॉलो-अप।" },
             { icon: <Salad size={26} />, t: "Natural Herbs + Diet", d: "औषधि के साथ सरल हिंदी डाइट चार्ट।" },
           ].map((c, i) => (
             <Reveal key={c.t} delay={i * 0.06}>
@@ -94,29 +92,35 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-forest-950 py-16 md:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,39,0.16),transparent_60%)]" />
         <div className="relative mx-auto max-w-7xl px-4">
-          <SectionHeading dark eyebrow="Diseases We Treat" title="हम किन रोगों का उपचार करते हैं" subtitle="हर कार्ड पर क्लिक करके लक्षण, कारण व आयुर्वेदिक समाधान विस्तार से जानें।" />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionHeading dark eyebrow="Our Treatments" title="हमारी प्रमुख स्वास्थ्य सेवाएँ" subtitle="आयुर्वेदिक परामर्श एवं व्यक्तिगत स्वास्थ्य समाधान" />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {treatments.map((t, i) => (
               <Reveal key={t.slug} delay={(i % 3) * 0.08}>
-                <Link href={`/treatments/${t.slug}`} className="gold-glow group block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-gold-400/60">
-                  <div className="relative h-44 overflow-hidden">
-                    <Image src={t.image} alt={t.hindi} fill className="object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 to-transparent" />
+                <article className="gold-glow group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-gold-400/60">
+                  <Link href={`/treatments/${t.slug}`} className="relative block h-48 overflow-hidden" aria-label={`${t.hindi} जानकारी देखें`}>
+                    <Image src={t.image} alt={t.alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className={t.fit === "contain" ? "object-contain bg-cream-100 p-3 transition duration-700 group-hover:scale-105" : "object-cover transition duration-700 group-hover:scale-110"} loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 to-transparent pointer-events-none" />
                     <span className="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-xl bg-gold-500 text-forest-950 shadow-lg">{iconMap[t.icon]}</span>
-                  </div>
-                  <div className="p-6">
+                  </Link>
+                  <div className="flex flex-1 flex-col p-6">
                     <div className="flex items-center gap-2">
                       <p className="text-[11px] font-bold uppercase tracking-widest text-gold-300">{t.english}</p>
                       {t.slug === "hair-problem" && <span className="rounded-full bg-gold-500 px-2.5 py-0.5 text-[10px] font-bold text-forest-950">★ नई सेवा</span>}
                     </div>
-                    <h3 className="font-display mt-1 text-2xl font-bold text-white">{t.hindi}</h3>
-                    <p className="mt-2 text-sm text-white/65">{t.tagline}</p>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-gold-300">विस्तार से जानें <ArrowRight size={15} className="transition group-hover:translate-x-1" /></span>
+                    <Link href={`/treatments/${t.slug}`}><h3 className="font-display mt-1 text-2xl font-bold text-white hover:text-gold-300 transition">{t.hindi}</h3></Link>
+                    <p className="mt-2 flex-1 text-sm text-white/65">{t.tagline}</p>
+                    <div className="mt-4 flex items-center justify-between gap-2">
+                      <Link href={`/treatments/${t.slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-gold-300">जानकारी देखें <ArrowRight size={15} className="transition group-hover:translate-x-1" /></Link>
+                      <a href={PHONE_1_LINK} aria-label="परामर्श लें" className="inline-flex items-center gap-1.5 rounded-full border border-gold-400/50 px-3.5 py-1.5 text-xs font-bold text-gold-300 transition hover:bg-gold-500 hover:text-forest-950"><Phone size={13} /> परामर्श लें</a>
+                    </div>
                   </div>
-                </Link>
+                </article>
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-10 text-center">
+            <Link href="/treatments" className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-8 py-3.5 font-bold text-forest-950 shadow-[0_16px_40px_-10px_rgba(201,162,39,0.8)] hover:brightness-110 transition">सभी उपचार देखें <ArrowRight size={17} /></Link>
+          </Reveal>
         </div>
       </section>
 
@@ -146,17 +150,31 @@ export default function HomePage() {
       {/* SUCCESS STRIP */}
       <section className="bg-cream-200/60 py-16 md:py-24 px-4">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Success Stories" title="रोगियों की मुस्कान ही हमारी कमाई" />
-          <div className="mt-12"><TestimonialCarousel /></div>
+          <SectionHeading eyebrow="Patient Stories" title="आपकी कहानी, हमारी प्रेरणा" subtitle="उपचार के बाद अपना अनुभव साझा करें — आपकी अनुमति से ही यहाँ वास्तविक कहानियाँ प्रकाशित की जाती हैं।" />
+          <Reveal className="mt-12">
+            <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+              <div className="rounded-[2rem] border border-gold-500/25 bg-white/80 p-8 text-center shadow-[0_30px_80px_-30px_rgba(6,46,22,0.4)] backdrop-blur">
+                <Stars />
+                <p className="font-display mt-4 text-xl font-bold text-forest-950">अपना अनुभव साझा करें</p>
+                <p className="mt-2 text-sm text-forest-900/70">WhatsApp पर अपना फीडबैक भेजें। अनुमति मिलने पर ही उसे यहाँ जोड़ा जाएगा।</p>
+                <a href={WHATSAPP_LINK} target="_blank" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-bold text-white hover:brightness-110 transition">WhatsApp पर भेजें</a>
+              </div>
+              <div className="rounded-[2rem] border border-forest-900/10 bg-forest-950 p-8 text-center text-white">
+                <p className="font-display text-xl font-bold">परामर्श लेना है?</p>
+                <p className="mt-2 text-sm text-white/70">पहली बार आयुर्वेदिक परामर्श — कॉल या WhatsApp पर संपर्क करें।</p>
+                <a href={PHONE_1_LINK} className="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-6 py-3 text-sm font-bold text-forest-950 hover:brightness-110 transition"><Phone size={16} /> 89200 06543</a>
+              </div>
+            </div>
+          </Reveal>
           <Reveal className="mt-8 text-center">
-            <Link href="/success-stories" className="inline-flex items-center gap-2 rounded-full bg-forest-800 px-7 py-3 font-bold text-white hover:bg-forest-700 transition">सभी Success Stories देखें <ArrowRight size={17} /></Link>
+            <Link href="/success-stories" className="inline-flex items-center gap-2 rounded-full bg-forest-800 px-7 py-3 font-bold text-white hover:bg-forest-700 transition">Patient Stories पेज देखें <ArrowRight size={17} /></Link>
           </Reveal>
         </div>
       </section>
 
       {/* HERBAL BANNER */}
       <section className="relative overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=2000&auto=format&fit=crop" alt="herbs" fill className="object-cover" loading="lazy" />
+        <Image src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?q=80&w=1600&auto=format&fit=crop" alt="herbs" fill sizes="100vw" className="object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-forest-950/80" />
         <div className="relative mx-auto max-w-5xl px-4 py-16 md:py-24 text-center">
           <Reveal>

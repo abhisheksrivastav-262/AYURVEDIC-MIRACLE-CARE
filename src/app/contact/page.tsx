@@ -5,7 +5,7 @@ import { faqs } from "@/data/content";
 import { Phone, MessageCircle, Clock, MapPin, Siren } from "lucide-react";
 import { PHONE_1_LINK, WHATSAPP_LINK } from "@/lib/utils";
 
-export const metadata = { title: "Contact | आयुर्वेदिक चमत्कारी उपचार", description: "अपॉइंटमेंट बुक करें — Call 8920006543, WhatsApp, क्लीनिक समय व पता।" };
+export const metadata = { title: "Contact | नमो नारायणा आयुर्वेदिक", description: "अपॉइंटमेंट बुक करें — Call 8920006543, WhatsApp, क्लीनिक समय व पता (गांधी चौक)।" };
 
 export default function ContactPage() {
   return (
@@ -44,8 +44,8 @@ export default function ContactPage() {
                 </div>
                 <div className="rounded-2xl border border-forest-900/10 bg-white p-5 text-center">
                   <MapPin className="mx-auto text-gold-600" size={24} />
-                  <p className="mt-2 font-bold text-forest-950 text-sm">Delhi NCR</p>
-                  <p className="text-xs text-forest-700">कॉल पर पता पाएँ</p>
+                  <p className="mt-2 font-bold text-forest-950 text-sm">गांधी चौक</p>
+                  <p className="text-xs text-forest-700">विस्तृत पते हेतु कॉल करें</p>
                 </div>
               </div>
             </Reveal>

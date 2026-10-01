@@ -1,24 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal, SectionHeading } from "@/components/Reveal";
-import { TrustCounters } from "@/components/Counters";
+import { TrustBadges } from "@/components/Counters";
 import BookingForm from "@/components/BookingForm";
 import { Leaf, HeartHandshake, Eye, Target, ArrowRight, Phone } from "lucide-react";
 import { PHONE_1_LINK } from "@/lib/utils";
 
-export const metadata = { title: "About Us | आयुर्वेदिक चमत्कारी उपचार", description: "20+ वर्षों से शुद्ध आयुर्वेदिक चिकित्सा — हमारा दर्शन, मिशन व उपचार यात्रा।" };
+export const metadata = { title: "About Us | नमो नारायणा आयुर्वेदिक", description: "शुद्ध आयुर्वेदिक चिकित्सा — हमारा दर्शन, मिशन व उपचार यात्रा।" };
 
 export default function AboutPage() {
   return (
     <div className="pt-32">
       <section className="relative overflow-hidden bg-forest-950 py-16 md:py-24">
-        <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2000&auto=format&fit=crop" alt="ayurveda" fill className="object-cover opacity-30" />
+        <Image src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1600&auto=format&fit=crop" alt="ayurveda" fill sizes="100vw" className="object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/60 to-forest-950" />
         <div className="relative mx-auto max-w-4xl px-4 text-center">
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-widest text-gold-300">About Us • हमारी कहानी</p>
             <h1 className="font-display mt-4 text-4xl md:text-6xl font-bold text-white">प्रकृति से उपचार, <span className="text-gold-gradient">सेवा से विश्वास</span></h1>
-            <p className="mt-5 text-white/70 leading-relaxed">दो दशकों से हम पथरी, शुगर, थायरॉयड व वात-रोगों में आयुर्वेदिक मार्गदर्शन दे रहे हैं — जहाँ हर रोगी परिवार जैसा है।</p>
+            <p className="mt-5 text-white/70 leading-relaxed">हम पथरी, शुगर, थायरॉयड व वात-रोगों सहित 16 स्वास्थ्य सेवाओं में आयुर्वेदिक मार्गदर्शन दे रहे हैं — जहाँ हर रोगी परिवार जैसा है।</p>
           </Reveal>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function AboutPage() {
           </div>
         </Reveal>
         <div>
-          <SectionHeading align="left" eyebrow="Clinic Introduction" title="आयुर्वेदिक चमत्कारी उपचार" subtitle="हमारा मानना है — हर शरीर में स्वयं ठीक होने की शक्ति है। आयुर्वेद उस शक्ति को जगाता है: दोष-संतुलन, अग्नि-सुधार, शोधन व रसायन द्वारा।" />
+          <SectionHeading align="left" eyebrow="Clinic Introduction" title="नमो नारायणा आयुर्वेदिक" subtitle="हमारा मानना है — हर शरीर में स्वयं ठीक होने की शक्ति है। आयुर्वेद उस शक्ति को जगाता है: दोष-संतुलन, अग्नि-सुधार, शोधन व रसायन द्वारा।" />
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               { icon: <Eye size={19} />, t: "Our Vision", d: "हर घर तक बिना-ऑपरेशन प्राकृतिक विकल्प की जानकारी।" },
@@ -51,7 +51,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-cream-200/60 py-14 px-4"><div className="mx-auto max-w-7xl"><TrustCounters /></div></section>
+      <section className="bg-cream-200/60 py-14 px-4"><div className="mx-auto max-w-7xl"><TrustBadges /></div></section>
 
       <section className="mx-auto max-w-5xl px-4 py-14 md:py-20">
         <SectionHeading eyebrow="Treatment Journey" title="उपचार यात्रा की timeline" />

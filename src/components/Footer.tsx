@@ -15,7 +15,7 @@ export default function Footer() {
               <p className="text-xs text-gold-300">{TAGLINE}</p>
             </div>
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-white/70">20+ वर्षों से शुद्ध आयुर्वेदिक जड़ी-बूटियों द्वारा पथरी, शुगर, थायरॉयड, जोड़-दर्द व अन्य रोगों का प्राकृतिक प्रबंधन।</p>
+          <p className="mt-5 text-sm leading-relaxed text-white/70">शुद्ध आयुर्वेदिक जड़ी-बूटियों द्वारा पथरी, शुगर, थायरॉयड, जोड़-दर्द व अन्य रोगों हेतु व्यक्तिगत आयुर्वेदिक परामर्श।</p>
           <div className="mt-5 flex gap-3">
             {[Globe, Share2, Play].map((Icon, i) => (
               <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5 text-gold-300 transition hover:bg-gold-500 hover:text-forest-950"><Icon size={17} /></a>
@@ -33,9 +33,10 @@ export default function Footer() {
         <div>
           <h4 className="text-sm font-bold tracking-widest text-gold-300 uppercase">Treatments</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
-            {["पित्त की थैली की पथरी", "शुगर (मधुमेह)", "गुर्दे की पथरी", "थायरॉयड", "बवासीर", "जोड़ों का दर्द", "हेयर प्रॉब्लम एवं गंजापन"].map((t) => (
+            {["पित्त की पथरी", "शुगर (मधुमेह)", "जोड़ों का दर्द", "बवासीर", "लकवा / पैरालिसिस", "हेयर प्रॉब्लम", "पुरुष स्वास्थ्य", "कैंसर सहायक देखभाल"].map((t) => (
               <li key={t}><Link href="/treatments" className="hover:text-gold-300 transition">{t}</Link></li>
             ))}
+            <li><Link href="/treatments" className="font-bold text-gold-300 hover:text-gold-400 transition">सभी 16 उपचार देखें →</Link></li>
           </ul>
         </div>
         <div>
@@ -44,7 +45,7 @@ export default function Footer() {
             <a href={PHONE_1_LINK} className="flex items-center gap-2 font-bold text-white hover:text-gold-300"><Phone size={16} className="text-gold-400" /> 89200 06543</a>
             <a href="tel:+917303233052" className="flex items-center gap-2 font-bold text-white hover:text-gold-300"><Phone size={16} className="text-gold-400" /> 73032 33052</a>
             <p className="flex items-start gap-2"><Clock size={16} className="mt-0.5 text-gold-400" /> Mon–Sun: 9:00 AM – 8:00 PM</p>
-            <p className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-gold-400" /> Ayurvedic Clinic — Delhi NCR (Call for address)</p>
+            <p className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-gold-400" /> पता: गांधी चौक (विस्तृत पते हेतु कॉल करें)</p>
             <a href={PHONE_1_LINK} className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-5 py-2.5 font-bold text-forest-950 hover:brightness-110 transition">Emergency Consultation</a>
           </div>
         </div>
@@ -52,7 +53,10 @@ export default function Footer() {
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col md:flex-row items-center justify-between gap-2 px-4 py-5 text-xs text-white/55">
           <p>© {new Date().getFullYear()} {SITE_NAME} • All rights reserved.</p>
-          <p>100% Ayurvedic • No Surgery Approach • Natural Herbs</p>
+          <p>शुद्ध आयुर्वेदिक • व्यक्तिगत परामर्श • प्राकृतिक जड़ी-बूटियाँ</p>
+        </div>
+        <div className="mx-auto max-w-7xl px-4 pb-5 text-[11px] leading-relaxed text-white/40">
+          <p>चिकित्सकीय सूचना: वेबसाइट की जानकारी केवल सामान्य जागरूकता हेतु है, चिकित्सकीय सलाह का विकल्प नहीं। परिणाम व्यक्ति-दर-व्यक्ति भिन्न होते हैं। Anatomical illustrations: Blausen Medical 2014 / Wikimedia Commons (CC BY 3.0 / CC BY-SA 4.0); Hair follicle: NIH NIAID (CC BY 4.0); Photos: Unsplash.</p>
         </div>
       </div>
     </footer>
